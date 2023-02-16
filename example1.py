@@ -34,7 +34,7 @@ fig,ax = pyplot.subplots(2,2,
                          )
 
 
-for i,k in enumerate([1,2,3,4]):
+for j,k in enumerate([1,2,3,4]):
     ii, jj = int(j//2), j%2 # map to 2-by-2 grid
     
     synth_labels = np.random.choice([0,1], p)
@@ -49,9 +49,12 @@ for i,k in enumerate([1,2,3,4]):
     ax[ii,jj].scatter(data_synth[:,0], data_synth[:,1], c=colors, s=1)
     ax[ii,jj].scatter(data[:,0],data[:,1], c='k', s=40)
     
-    ax[ii,jj].text(0.25,0.9, r'$k=%i$'%k, fontsize=14, transform=ax[i].transAxes, ha='center', va='center', bbox=props)
+    ax[ii,jj].text(0.25,0.9, r'$k=%i$'%k, fontsize=14, transform=ax[ii,jj].transAxes, ha='center', va='center', bbox=props)
 #
 
 fig.suptitle('SMOTE, varying number of nearest neighbors', fontsize=18)
+
+if False:
+    fig.savefig('smote_multiclass_demo.png')
 
 fig.show()
