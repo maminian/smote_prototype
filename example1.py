@@ -11,7 +11,7 @@ m = 20      # Data points per circle
 p = 1273    # Total additional data points.
 np.random.seed(57721)   # Euler-Mascheroni
 
-props = dict(boxstyle='square', facecolor=[0.95,0.95,0.95], edgecolor='k', alpha=0.5)
+props = dict(boxstyle='square', facecolor=[0.95,0.95,0.95], edgecolor='k', alpha=1)
 
 th = 2*np.pi*np.random.rand(m)
 x0 = np.cos(th)
@@ -29,7 +29,7 @@ labels = np.hstack( (np.zeros(m), np.ones(m)) )
 fig,ax = pyplot.subplots(2,2, 
                          sharex=True, 
                          sharey=True, 
-                         figsize=(8,8),
+                         figsize=(6,6),
                          constrained_layout=True
                          )
 
